@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Source_Sans_3 } from "next/font/google";
 import { ThemeProvider } from "./components/ThemeProvider";
+import Providers from "./components/Providers";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 
@@ -40,10 +41,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`${playfair.variable} ${sourceSans.variable} antialiased`}>
-        <ThemeProvider>
-          <Navbar />
-          {children}
-        </ThemeProvider>
+        <Providers>
+          <ThemeProvider>
+            <Navbar />
+            {children}
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
