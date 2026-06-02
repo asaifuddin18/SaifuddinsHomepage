@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
@@ -10,7 +11,17 @@ export default function Navbar() {
           <span className="text-brown">Saifuddin&apos;s </span>
           <span className="text-copper">Family</span>
         </span>
-        <ThemeToggle />
+
+        <div className="flex items-center gap-3">
+          <Image
+            src="/avatar.jpg"
+            alt="Saifuddin family"
+            width={32}
+            height={32}
+            className="rounded-full border border-border"
+          />
+          <ThemeToggle />
+        </div>
       </div>
     </nav>
   );
